@@ -1,0 +1,27 @@
+{
+    "name": "drupal/node_by_email",
+    "description": "Node by email provides functionality to create the node by only the sending the mail to an email id from a defined email id.",
+    "type": "drupal-module",
+    "authors": [
+        {
+            "name": "Rajveer Singh",
+            "homepage": "https://www.drupal.org/u/rajveergangwar",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Prashant Mishra",
+            "homepage": "https://www.drupal.org/u/prashant-mishra",
+            "role": "Co-maintainer"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0"
+    },
+    "extra": {
+        "drush": {
+            "services": {
+                "drush.services.yml": "^10"
+            }
+        }
+    }
+}

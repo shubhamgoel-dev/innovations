@@ -1,0 +1,5 @@
+services:
+  node_by_email.commands:
+    class: \Drupal\node_by_email\Commands\NodeByEmailCommands
+    tags:
+      - { name: drush.command }

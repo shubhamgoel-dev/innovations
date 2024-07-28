@@ -1,0 +1,15 @@
+job_research.form:
+  path: /admin/config/innovation/job_research
+  defaults:
+    _title: 'Job Research Configuration Form'
+    _form: '\Drupal\job_research\Form\JobResearchFilterForm'
+  requirements:
+    _permission: "access content"
+
+job_research.form_results:
+  path: /admin/config/innovation/job_research_results
+  defaults:
+    _title: 'Job Research Results Form'
+    _form: '\Drupal\job_research\Form\JobResearchResultsForm'
+  requirements:
+    _permission: "access content"

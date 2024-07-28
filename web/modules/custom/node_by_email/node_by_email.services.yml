@@ -1,0 +1,10 @@
+services:
+  node_by_email.imap_connection:
+    class: Drupal\node_by_email\IMAPService
+    arguments: ['@config.factory', '@current_user']
+  logger.channel.node_by_email:
+    parent: logger.channel_base
+    arguments: ['node_by_email']
+  node_by_email.mid_to_node:
+    class: Drupal\node_by_email\MidToNodeService
+    arguments: ['@node_by_email.imap_connection', '@current_user', '@entity_type.manager', '@config.factory']

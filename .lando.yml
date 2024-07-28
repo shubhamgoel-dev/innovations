@@ -1,0 +1,4 @@
+name: innovations
+recipe: drupal10
+config:
+  webroot: web

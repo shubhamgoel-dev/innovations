@@ -1,0 +1,9 @@
+node_by_email.admin_config_tab:
+  route_name: node_by_email.node_by_email_config_form
+  title: 'Configuration'
+  base_route: node_by_email.node_by_email_config_form
+
+node_by_email.admin_unseen_email_tab:
+  route_name: node_by_email.unseen_email_controller_unseenEmailList
+  title: 'Unseen Emails'
+  base_route: node_by_email.node_by_email_config_form

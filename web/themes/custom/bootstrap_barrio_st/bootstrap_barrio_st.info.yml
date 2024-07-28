@@ -1,0 +1,30 @@
+name: My Bootstrap Barrio Custom Theme
+type: theme
+description: 'Basic structure for a Bootstrap Barrio SubTheme.'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+base theme: bootstrap_barrio
+
+libraries:
+  - bootstrap_barrio_st/bootstrap_cdn
+  - bootstrap_barrio_st/global-styling
+  - bootstrap_barrio_st/font-awesome-css
+
+regions:
+  top_header: 'Top header'
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  breadcrumb: Breadcrumb
+  content: Content
+  sidebar_first: 'Sidebar first'
+  footer: 'footer'
+
+# Information added by Drupal.org packaging script on 2023-12-03
+version: '5.5.16'
+project: 'bootstrap_barrio'
+datestamp: 1701646129

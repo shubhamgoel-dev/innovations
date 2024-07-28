@@ -1,0 +1,7 @@
+imap_connection_string: "{imap.gmail.com:993/imap/ssl}"
+publishing_option: 0
+author_uid: 1
+cron_interval: 3600
+email_username: "RRR@example.com"
+from_email: "FFF@example.com"
+node_types: []

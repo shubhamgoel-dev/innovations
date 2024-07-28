@@ -1,0 +1,67 @@
+<?php 
+
+/**
+ * Implements hook_schema().
+ */
+function job_research_schema() {
+    $schema['job_research'] = [
+        'description' => 'List of job with description and webpage links.',
+        'fields' => [
+          'id' => [
+            'type' => 'serial',
+            'not null' => TRUE,
+            'description' => 'Record id',
+          ],
+          'position' => [
+            'description' => 'Position',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+          ],
+          'location' => [
+            'description' => 'Location of Job.',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+          ],
+          'posting_period' => [
+            'description' => 'Posting Period.',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+          ],
+          'experience' => [
+            'description' => 'Experience',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+          ],
+          'work' => [
+            'description' => 'Work Type',
+            'type' => 'varchar',
+            'length' => 255,
+            'not null' => TRUE,
+            'default' => '',
+          ],
+          'webpage' => [
+            'description' => 'Webpage',
+            'type' => 'varchar',
+            'length' => 500,
+            'not null' => TRUE,
+            'default' => '',
+          ],
+        ],
+        'primary key' => ['id'],
+        'indexes' => [
+          'position' => [
+            'position',
+          ],
+        ],
+      ];
+    
+      return $schema;
+}

@@ -1,0 +1,6 @@
+configure node by email module:
+  title: 'Configure node by email module'
+  description: 'Allow access to configure page of node by email module'
+access to unseen mail list:
+  title: 'Access to unseen mail list'
+  description: 'Allow access to unseen mail list'

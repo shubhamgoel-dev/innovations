@@ -1,0 +1,90 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+#navbar-top {
+    padding: 25px 0 15px; 
+    background-color: #fafaff;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#navbar-top a.btn-navbar-top {
+    background-color: #1265A1;
+    padding: 7px 22px 8px;
+    font-weight: 500;
+    margin: 0px 10px;
+    transition: color ease-in-out .2s, background-color ease-in-out .2s, border-color ease-in-out .2s;
+}
+
+#navbar-main{
+    padding: 4px 0px;
+}
+
+#navbar-main .navbar-collapse{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#main-wrapper {
+    margin-top: 20px;
+}
+
+#main {
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #fafaff;
+}
+
+nav.menu--sidebar-navigation ul.nav li.menu-item--expanded {
+    width:100%
+}
+
+nav.menu--sidebar-navigation ul.nav li.menu-item--expanded>a{
+    display: block;
+    color: #b82e2e;
+    text-decoration: none;
+    text-underline-position: from-font;
+    text-decoration-thickness: from-font !important;
+    font-size: 20.8px;
+    font-weight: 500;
+    line-height: 24px;
+    border-bottom: 2px solid #ededed;
+}
+
+nav.menu--sidebar-navigation ul.menu {
+    list-style-type: none;
+}
+
+nav.menu--sidebar-navigation ul.menu li.nav-item>a{
+    color: #202020;
+    text-decoration: none;
+}
+nav.menu--sidebar-navigation ul.menu li.nav-item>a:before {
+    /* display: inline-block;
+    font-weight: 400;
+    font-variant: normal;
+    speak: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: ">";
+    font-size: .8rem;
+    width: .75rem;
+    margin-left: .25rem; */
+
+    content: '';
+    position: absolute;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 5px;
+    height: 5px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    top: calc(50% - 20px);
+    left: 10px;
+    transform: translateY(-50%) rotate(-45deg);
+}
+

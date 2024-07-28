@@ -1,0 +1,4 @@
+services:
+  job_research.utility:
+    class: Drupal\job_research\Service\JobResearchService
+    arguments: ['@database', '@entity_type.manager']

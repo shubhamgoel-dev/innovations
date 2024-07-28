@@ -1,0 +1,13 @@
+node_by_email.node_by_email_config_form:
+  title: 'Node By Email Settings'
+  route_name: node_by_email.node_by_email_config_form
+  description: 'Configration for node by email.'
+  parent: system.admin_config_system
+  weight: 1
+
+node_by_email.node_by_email_unseen_email_list:
+  title: 'Unseen Email List'
+  route_name: node_by_email.unseen_email_controller_unseenEmailList
+  description: 'Unseen Email List.'
+  parent: node_by_email.node_by_email_config_form
+  weight: 2

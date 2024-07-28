@@ -1,0 +1,43 @@
+{
+    "name": "commerceguys/authnet",
+    "description": "PHP SDK for Authorize.Net API, using Guzzle.",
+    "type": "library",
+    "keywords": ["authorizenet", "authorize.net", "payment", "ecommerce"],
+    "require": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "ext-simplexml": "*",
+        "ext-xmlwriter": "*",
+        "guzzlehttp/guzzle": "^6.2 || ^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.23",
+        "squizlabs/php_codesniffer": "~2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matt Glaman",
+            "email": "nmd.matt@gmail.com"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "CommerceGuys\\AuthNet\\": "src"
+      }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CommerceGuys\\AuthNet\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit -c phpunit.xml.dist",
+        "cs": "./vendor/bin/phpcs --standard=psr2 src/"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}

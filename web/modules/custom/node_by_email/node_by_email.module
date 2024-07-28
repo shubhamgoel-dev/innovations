@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @file
+ * Contains node_by_email.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function node_by_email_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the node_by_email module.
+    case 'help.page.node_by_email':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module creates nodes by sending email from a given email id. The email subject is mapped to node title field
+    and the email body is mapped to node body field.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function node_by_email_cron() {
+  $last_run = \Drupal::state()->get('node_by_email.last_run', 0);
+  $configInterval = \Drupal::service('config.factory')->getEditable('node_by_email.nodebyemailconfig')->get("cron_interval");
+  // If config interval seconds passed since last time.
+  if ((\Drupal::time()->getRequestTime() - $last_run) > $configInterval) {
+    $emailArray = \Drupal::service('node_by_email.imap_connection')->getUnseenEmailList();
+    // Process mails.
+    if (!empty($emailArray)) {
+      foreach ($emailArray as $mid) {
+        \Drupal::service('node_by_email.mid_to_node')->createNodeFromMid($mid);
+      }
+    }
+    // Update last run.
+    \Drupal::state()->set('node_by_email.last_run', \Drupal::time()->getRequestTime());
+  }
+}

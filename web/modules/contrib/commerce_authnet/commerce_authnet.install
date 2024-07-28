@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Contains install and update functions for Commerce Authorize.net.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function commerce_authnet_requirements($phase) {
+  $requirements = [];
+  if ($phase == 'install') {
+    if (!class_exists('\CommerceGuys\AuthNet\Configuration')) {
+      $requirements['commerce_authnet_library'] = [
+        'description' => t('Commerce Authorize.net requires the commerceguys/authnet library.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}
+
+/**
+ * Disables credit card icon settings on existing payment gateways.
+ */
+function commerce_authnet_update_8101() {
+  $payment_gateways = \Drupal::entityTypeManager()
+    ->getStorage('commerce_payment_gateway')
+    ->loadMultiple();
+
+  foreach ($payment_gateways as $payment_gateway) {
+    if ($payment_gateway->getPluginId() == 'authorizenet_acceptjs') {
+      $configuration = $payment_gateway->getPluginConfiguration();
+      $configuration['enable_credit_card_icons'] = FALSE;
+      $payment_gateway->setPluginConfiguration($configuration);
+      $payment_gateway->save();
+    }
+  }
+}

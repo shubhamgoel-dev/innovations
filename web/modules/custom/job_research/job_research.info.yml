@@ -1,0 +1,5 @@
+name: Job Research
+description: Job Research for Popular websites
+type: module
+core_version_requirement: ^9 || ^10
+package: Innovation
