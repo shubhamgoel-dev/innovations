@@ -1,4 +1,4 @@
-core/
-modules/contrib
-themes/contrib
-sites/
+/web/core
+/web/modules/contrib
+/web/themes/contrib
+/web/sites/
