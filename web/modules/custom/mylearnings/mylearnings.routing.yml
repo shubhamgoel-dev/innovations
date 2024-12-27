@@ -1,0 +1,13 @@
+mylearnings.learning1:
+  path: '/learn'
+  defaults:
+    _controller: Drupal\mylearnings\Controller\MyController::content
+  requirements:
+    _permission: 'access content'
+
+mylearnings.batch_op:
+  path: '/admin/learnbatch'
+  defaults:
+    _form: Drupal\mylearnings\Form\BatchProcessForm
+  requirements:
+    _permission: 'access content'

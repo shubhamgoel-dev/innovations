@@ -1,0 +1,5 @@
+name: My Learnings
+description: My Custom Module for learning
+core_version_requirement: ^9 || ^10
+type: module
+configure: mylearnings.batch_op
